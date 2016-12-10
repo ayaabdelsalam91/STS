@@ -63,6 +63,14 @@ plagiarism   0.834619682447
 headlines   0.741809880516
 0.747087959918
 
+Combinig feature 2 and 3:
+
+answer-answer   0.540158623699
+question-question   0.521710131668
+postediting   0.817066091062
+plagiarism   0.810176308663
+headlines   0.753785334636
+0.688579297946
 
 
 An error analysis of your best performing results
