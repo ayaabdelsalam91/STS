@@ -520,7 +520,7 @@ if __name__ == "__main__":
 	
 	Data = './../Data/'
 	# Stopwords = read_dictionary(Data + "Stopwords.txt")
-	# Output_path = './../Data/fancy_output/'
+	Output_path = './../Data/fancy_output/'
 	# WordEmbbedings = "/Users/aya/Documents/CMSC723/P3/paragram_300_sl999/paragram_300_sl999.txt"
 	# BOW,unqiue_count = bag_of_words(Data +"2015train.input.txt")
 	# create_training_embeddings(BOW,WordEmbbedings,Data + "2015train_embeddings.txt")
