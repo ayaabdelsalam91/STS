@@ -232,18 +232,10 @@ if __name__ == "__main__":
 	Data = './Data/'
 	Output_path = './Data/Basic_output/'
 	WordEmbbedings = "/Users/aya/Documents/CMSC723/P3/paragram_300_sl999/paragram_300_sl999.txt"
-	# BOW,unqiue_count = bag_of_words(Data +"2015train.input.txt")
-	# create_training_embeddings(BOW,WordEmbbedings,Data + "2015train_embeddings.txt")
-	# create_dictionary(Data +"2015train_embeddings.txt",Data +"2015train_dictionary.txt")
-	# #
-	# print BOW,unqiue_count
-	# unk, unknown_count  = get_unknown_words(BOW,Main_dictionary,dictionary)
-	# print unk , unknown_count
 
 	Datasets = ['answer-answer' , 'question-question','postediting','plagiarism','headlines']
 	eval_DS = []
-	#answer-answer , 'question-question','postediting','plagiarism','headlines',
-	#Datasets = ['headlines']
+
 	print "Testing...."
 	prtotal = 0 
 	for dataset in Datasets:
@@ -270,8 +262,7 @@ if __name__ == "__main__":
 	for i in range(len(Datasets)):
 		print  Datasets[i] , " " , eval_DS[i]
 
-	print('Processing time: %r'
-	       % (toc - ticstart))
+
 		
 
 	os.system('say "your program has finished"')

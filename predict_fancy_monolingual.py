@@ -11,6 +11,155 @@ from aligner import *
 import pandas
 import time
 import skipthoughts
+from nltk.corpus import wordnet
+from sklearn.svm import SVC
+import re
+
+
+
+contractions_dict = { 
+"ain't": "am not",
+"aren't": "are not",
+"can't": "can not",
+"can't've": "can not have",
+"'cause": "because",
+"could've": "could have",
+"couldn't": "could not",
+"couldn't've": "could not have",
+"didn't": "did not",
+"doesn't": "does not",
+"don't": "do not",
+"hadn't": "had not",
+"hadn't've": "had not have",
+"hasn't": "has not",
+"haven't": "have not",
+"he'd": "he had",
+"he'd've": "he would have",
+"he'll": "he will",
+"he'll've": "he will have",
+"he's": "he is",
+"how'd": "how did",
+"how'd'y": "how do you",
+"how'll": "how will",
+"how's": "how is",
+"i'd": "i would",
+"i'd've": "i would have",
+"i'll": "i will",
+"i'll've": "i will have",
+"i'm": "i am",
+"i've": "i have",
+"isn't": "is not",
+"it'd": "it would",
+"it'd've": "it would have",
+"it'll": "it will",
+"it'll've": "it will have",
+"it's": "it is",
+"let's": "let us",
+"ma'am": "madam",
+"mayn't": "may not",
+"might've": "might have",
+"mightn't": "might not",
+"mightn't've": "might not have",
+"must've": "must have",
+"mustn't": "must not",
+"mustn't've": "must not have",
+"needn't": "need not",
+"needn't've": "need not have",
+"o'clock": "of the clock",
+"oughtn't": "ought not",
+"oughtn't've": "ought not have",
+"shan't": "shall not",
+"sha'n't": "shall not",
+"shan't've": "shall not have",
+"she'd": "she would",
+"she'd've": "she would have",
+"she'll": "she will",
+"she'll've": "she will have",
+"she's": "she is",
+"should've": "should have",
+"shouldn't": "should not",
+"shouldn't've": "should not have",
+"so've": "so have",
+"so's": "sso is",
+"that'd": "that had",
+"that'd've": "that would have",
+"that's": "that is",
+"there'd": "there would",
+"there'd've": "there would have",
+"there's": "there is",
+"they'd": "they would",
+"they'd've": "they would have",
+"they'll": "they will",
+"they'll've": "they will have",
+"they're": "they are",
+"they've": "they have",
+"to've": "to have",
+"wasn't": "was not",
+"we'd": "we would",
+"we'd've": "we would have",
+"we'll": "we will",
+"we'll've": "we will have",
+"we're": "we are",
+"we've": "we have",
+"weren't": "were not",
+"what'll": "what will",
+"what'll've": "what will have",
+"what're": "what are",
+"what's": "what is",
+"what've": "what have",
+"when's": "when is",
+"when've": "when have",
+"where'd": "where did",
+"where's": "where is",
+"where've": "where have",
+"who'll": "who will",
+"who'll've": "who will have",
+"who's": "who is",
+"who've": "who have",
+"why's": "why is",
+"why've": "why have",
+"will've": "will have",
+"won't": "will not",
+"won't've": "will not have",
+"would've": "would have",
+"wouldn't": "would not",
+"wouldn't've": "would not have",
+"y'all": "you all",
+"y'all'd": "you all would",
+"y'all'd've": "you all would have",
+"y'all're": "you all are",
+"y'all've": "you all have",
+"you'd": "you would",
+"you'd've": "you would have",
+"you'll": "you will",
+"you'll've": "you will have",
+"you're": "you are",
+"you've": "you have"
+}
+
+
+def expand_contractions(s, contractions_re ,contractions_dict=contractions_dict):
+    def replace(match):
+       return contractions_dict[match.group(0)]
+    return contractions_re.sub(replace, s)
+
+
+def complexPreprocessing(Sentences,Stopwords =None):
+
+	contractions_re = re.compile('(%s)' % '|'.join(contractions_dict.keys()))
+	Sentences =  expand_contractions(Sentences.lower(),contractions_re)
+
+	Sentences = re.sub(r'(https|http)?:\/\/(\w|\.|\/|\?|\=|\&|\%)*\b', '', Sentences, flags=re.MULTILINE)
+	Sentences = re.sub(r'[\w\.-]+@[\w\.-]+', '', Sentences , flags=re.MULTILINE)
+	Sentences = re.sub(r'\([^)]*\)', '', Sentences , flags=re.MULTILINE)
+	Sentences =Sentences.replace('/', ' ')
+	table = string.maketrans("","")
+	Sentences = Sentences.translate(table, string.punctuation)
+	Sentences = Sentences.lower()
+	Sentences.lower()
+	#print Sentences
+	return Sentences
+
 
 def read_data(input):
 	in_file = open(input, "r")
@@ -68,11 +217,8 @@ def get_word_from_embeddings(word,Main_dictionary,Main_embeddings,dictionary,emb
 def get_alignment_similarity(FirstSentence,SecondSentence,Stopwords):
 	FirstSentenceor = FirstSentence
 	SecondSentenceor = SecondSentence
-	table = string.maketrans("","")
-	FirstSentence = FirstSentence.lower()
-	SecondSentence = SecondSentence.lower()
-	FirstSentence =FirstSentence.replace('/', ' ')
-	SecondSentence =SecondSentence .replace('/', ' ')
+	FirstSentence = complexPreprocessing(FirstSentence)
+	SecondSentence = complexPreprocessing(SecondSentence)
 	FirstSentence = FirstSentence.split(' ')
 	SecondSentence = SecondSentence.split(' ')
 	FirstSentenceFinal = []
@@ -81,13 +227,11 @@ def get_alignment_similarity(FirstSentence,SecondSentence,Stopwords):
 	len2 = len(SecondSentence)
 	for i in range(0, len1):
 		if(len(FirstSentence[i])>0 ):
-			FirstSentence[i] = FirstSentence[i].translate(table, string.punctuation)
 			if(FirstSentence[i].isalpha() and FirstSentence[i] not in Stopwords):
 				FirstSentenceFinal.append(FirstSentence[i])
 
 	for i in range(0, len2):
 		if(len(SecondSentence[i])>0 ):
-			SecondSentence[i] = SecondSentence[i].translate(table, string.punctuation)
 			if(SecondSentence[i].isalpha() and SecondSentence[i] not in Stopwords):
 				SecondSentenceFinal.append(SecondSentence[i])
 
@@ -107,21 +251,12 @@ def get_alignment_similarity(FirstSentence,SecondSentence,Stopwords):
 	# print  normalized(0,1,0,5,similarity)
 	return normalized(0,1,0,5,similarity)
 
-def get_processed_sentence(FirstSentence):
-	table = string.maketrans("","")
-	FirstSentence = FirstSentence.lower()
-	FirstSentence =FirstSentence.replace('/', ' ')
-	FirstSentence = FirstSentence.translate(table, string.punctuation)
-	return FirstSentence
 
 def get_sentence_similarity(FirstSentence,SecondSentence,Main_dictionary,Main_embeddings,dictionary,embeddings_dictionary):
 	FirstSentenceor = FirstSentence
 	SecondSentenceor = SecondSentence
-	table = string.maketrans("","")
-	FirstSentence = FirstSentence.lower()
-	SecondSentence = SecondSentence.lower()
-	FirstSentence =FirstSentence.replace('/', ' ')
-	SecondSentence =SecondSentence .replace('/', ' ')
+	FirstSentence = complexPreprocessing(FirstSentence)
+	SecondSentence = complexPreprocessing(SecondSentence)
 	FirstSentence = FirstSentence.split(' ')
 	SecondSentence = SecondSentence.split(' ')
 	len1 = len(FirstSentence)+1
@@ -131,8 +266,6 @@ def get_sentence_similarity(FirstSentence,SecondSentence,Main_dictionary,Main_em
 	num=0
 	for i in range(0, len1-1):
 		if(len(FirstSentence[i])>0):
-			FirstSentence[i] = FirstSentence[i].translate(table, string.punctuation)
-
 			vector = get_word_from_embeddings(FirstSentence[i],Main_dictionary,Main_embeddings,dictionary,embeddings_dictionary)
 			if(vector != -1 and vector !=[]):
 				num+=1
@@ -144,9 +277,6 @@ def get_sentence_similarity(FirstSentence,SecondSentence,Main_dictionary,Main_em
 	num=0
 	for i in range(0, len2-1):
 		if(len(SecondSentence[i])>0):
-			SecondSentence[i] = SecondSentence[i].translate(table, string.punctuation)
-			# if(SecondSentence[i][-1] == '.' or SecondSentence[i][-1] == '?'):
-			# 	SecondSentence[i]=SecondSentence[i][:-1]
 			vector = get_word_from_embeddings(SecondSentence[i],Main_dictionary,Main_embeddings,dictionary,embeddings_dictionary)
 			if(vector != -1 and vector !=[]):
 				num+=1
@@ -159,13 +289,6 @@ def get_sentence_similarity(FirstSentence,SecondSentence,Main_dictionary,Main_em
 	# print similarity[0][0]
 	return normalized(-1,1,0,5,similarity)
 
-def output_similarity(out_path,FirstSentences,SecondSentences,Main_dictionary,Main_embeddings,dictionary,embeddings):
-	out_file = open(out_path, "w")
-	for i in range (len(FirstSentences)):
-		#print FirstSentences[i] , SecondSentences[i]
-		out_file.write(str(format(get_sentence_similarity(FirstSentences[i],SecondSentences[i],Main_dictionary,Main_embeddings,dictionary,embeddings))))
-		out_file.write("\n")
-	out_file.close()
 
 def print_output(out_path,outputs):
 	out_file = open(out_path, "w")
@@ -185,6 +308,7 @@ def get_Feature1(FirstSentences,SecondSentences,Main_dictionary,Main_embeddings,
 		Sentencefeature = get_sentence_similarity(FirstSentences[i],SecondSentences[i],Main_dictionary,Main_embeddings,dictionary,embeddings)
 		feature.append(Sentencefeature)
 	return feature
+
 def get_Feature2(FirstSentences,SecondSentences,Stopwords):
 	print "Feature 2"
 	feature = []
@@ -202,8 +326,8 @@ def get_Feature3(FirstSentences,SecondSentences,model):
 	PreprossedFirstSentences = []
 	PreprossedSecondSentences = []
 	for i in range (len(FirstSentences)):
-		PreprossedFirstSentences . append(get_processed_sentence(FirstSentences[i]))
-		PreprossedSecondSentences . append(get_processed_sentence(SecondSentences[i]))
+		PreprossedFirstSentences . append(complexPreprocessing(FirstSentences[i]))
+		PreprossedSecondSentences . append(complexPreprocessing(SecondSentences[i]))
 	SentencesA = skipthoughts.encode(model, PreprossedFirstSentences, verbose=False, use_eos=True)
 	SentencesB = skipthoughts.encode(model, PreprossedSecondSentences, verbose=False, use_eos=True)
 	for i in range (len(SentencesA)):
@@ -218,12 +342,9 @@ def bag_of_words(path):
 	BOW = dict()
 	unqiue_count=0
 	for line in file:
+		line =  complexPreprocessing(line)
 		words = line.split()
 		for word in words:
-			#print word
-			word = word.translate(table, string.punctuation)
-			# if(word[-1]=='.' or word[-1]=='?'):
-			# 	word=word[:-1]
 			if word in BOW:
 				BOW[word.lower()] += 1
 			else:
@@ -305,25 +426,26 @@ def prepareModel(input,output):
 	print  output.shape
 	#input = input.reshape(-1, 1)
 	print input.shape
-	#alphas = [1e-3, 1e-2, 1e-1, 1e0, 1e1]
 	model = RidgeCV()
 	model.fit(input,output) 
 
 	return model
+
 
 def predict(model,input):
 	input = np.array(input)
 	#input = input.reshape(-1, 1)
 	return model.predict(input)
 
-def mergeFeatures(f1,f2,f3):
-	return np.column_stack((f1,f2,f3))
 
-# def mergeFeatures(f1,f2):
-# 	return np.column_stack((f1,f2))
+def mergeFeatures(f1,f2):
+	return np.column_stack((f1,f2))
+
+# def mergeFeatures(f1,f2,f3):
+# 	return np.column_stack((f1,f2,f3))
 def eval(gold,predectvalues):
             pr = pearsonr(gold, predectvalues)[0]
-            #print 'Test Pearson: ' + str(pr)
+            print 'Test Pearson: ' + str(pr)
             return pr
 
 if __name__ == "__main__":
@@ -333,9 +455,9 @@ if __name__ == "__main__":
 
 	
 	Data = './../Data/'
-	Stopwords = read_dictionary(Data + "Stopwords.txt")
-	Output_path = './../Data/fancy_output/'
-	WordEmbbedings = "/Users/aya/Documents/CMSC723/P3/paragram_300_sl999/paragram_300_sl999.txt"
+	# Stopwords = read_dictionary(Data + "Stopwords.txt")
+	# Output_path = './../Data/fancy_output/'
+	# WordEmbbedings = "/Users/aya/Documents/CMSC723/P3/paragram_300_sl999/paragram_300_sl999.txt"
 	# BOW,unqiue_count = bag_of_words(Data +"2015train.input.txt")
 	# create_training_embeddings(BOW,WordEmbbedings,Data + "2015train_embeddings.txt")
 	# create_dictionary(Data +"2015train_embeddings.txt",Data +"2015train_dictionary.txt")
@@ -344,39 +466,43 @@ if __name__ == "__main__":
 	# unk, unknown_count  = get_unknown_words(BOW,Main_dictionary,dictionary)
 	# print unk , unknown_count
 
-	ticstart = time.time()
+
    
-	print "Training...."
-	dictionary = read_dictionary(Data+"train_dictionary.txt")
-	embeddings = read_embeddings(Data+"train_embeddings.txt")
-	s1,s2 = read_data(Data+"train.input.txt")
-	gs =  read_gs(Data+"train.gs.txt")
-	f1_train = get_Feature1(s1[:700],s2[:700],Main_dictionary,Main_embeddings,dictionary,embeddings)
-	f2_train = get_Feature2(s1[:700],s2[:700],Stopwords)
-	skModel = skipthoughts.load_model()
-	f3_train = get_Feature3(s1[:700],s2[:700],skModel)
-	train_features = mergeFeatures(f1_train,f2_train,f3_train)
+	# print "Training...."
+
+
+	# dictionary = read_dictionary(Data+"train_dictionary.txt")
+	# embeddings = read_embeddings(Data+"train_embeddings.txt")
+	# s1,s2 = read_data(Data+"train.input.txt")
+	# gsTrain =  read_gs(Data+"train.gs.txt")
+	# f1_train = get_Feature1(s1[:700],s2[:700],Main_dictionary,Main_embeddings,dictionary,embeddings)
+	# f2_train = get_Feature2(s1[:700],s2[:700],Stopwords)
+	# skModel = skipthoughts.load_model()
+	# f3_train = get_Feature3(s1[:700],s2[:700],skModel)
+	# #f4_train =  get_Feature4(s1[:700],s2[:700])
+	# train_features = mergeFeatures(f1_train,f2_train)
 	
 
-	model = prepareModel(train_features,gs[:700])
-	filename = Data + 'f2andf3.sav'
-	# # # # #model =joblib.load(filename) 
 
-	joblib.dump(model, filename)
+
+	# model = prepareModel(train_features,gsTrain[:700])
+	# # print model
+	# filename = Data + 'f1andf2preprocessingComplex.sav'
+	# model =joblib.load(filename) 
+
+	# joblib.dump(model, filename)
  
-	print('Coefficients: \n', model.coef_)
-	print model.intercept_
+	# print('Coefficients: \n', model.coef_)
+	# print model.intercept_
 
-	toc = time.time()
-	print('Processing time: %r'
-       % (toc - ticstart))
-	os.system('say "Done training"')
+	# os.system('say "Done training"')
 
 
+
+	
 	Datasets = ['answer-answer' , 'question-question','postediting','plagiarism','headlines']
 	eval_DS = []
-	#answer-answer , 'question-question','postediting','plagiarism','headlines',
-	#Datasets = ['plagiarism']
+
 	print "Testing...."
 	prtotal = 0 
 	for dataset in Datasets:
@@ -390,25 +516,23 @@ if __name__ == "__main__":
 		s1,s2 = read_data(Data +"STS2016.input."+dataset+".txt")
 		gs =  read_gs(Data +"STS2016.gs."+dataset+".txt")
 		f1_test = get_Feature1(s1,s2,Main_dictionary,Main_embeddings,dictionary,embeddings)
-		f2_test = get_Feature2(s1,s2,Stopwords)
-		f3_test = get_Feature3(s1,s2,skModel)
-		test_features = mergeFeatures(f1_test,f2_test,f3_test)
-		yhat= predict(model,test_features)
+		# f2_test = get_Feature2(s1,s2,Stopwords)
+		#f3_test = get_Feature3(s1,s2,skModel)
+		# # f4_test =  get_Feature4(s1,s2)
+		# test_features = mergeFeatures(f1_test,f2_test)
+		# yhat= predict(model,test_features)
 		pr = eval(gs,yhat)
 		prtotal+= pr
-		print  dataset , " " , pr
+		
 		eval_DS.append(pr)
-		# print_output(Output_path+"STS2016.out."+dataset+"_combined.txt",yhat)
+		print_output(Output_path+"STS2016.out."+dataset+".txt",f1_test)
 		os.system('say "your dataset has finished"')
-		toc = time.time()
 
 	print prtotal
 	print prtotal/5
 	for i in range(len(Datasets)):
 		print  Datasets[i] , " " , eval_DS[i]
 
-	print('Processing time: %r'
-	       % (toc - ticstart))
-		
+
 
 	os.system('say "your program has finished"')
