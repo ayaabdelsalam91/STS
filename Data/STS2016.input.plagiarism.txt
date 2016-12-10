@@ -1,0 +1,230 @@
+Vector space representation results in the loss of the order which the terms are in the document.	If a term occurs in the document, the value will be non-zero in the vector.
+Inheritance in object oriented programming is a way to form new classes using classes that have already been defined.	The peropos of inheritance in object oriented programming is to minimize the reuse of existing code without modification.
+To explain further vector space models, basically a document is characterized by a vector.	A document is represented as a vector.
+Bayes’ theorem was names after Rev Thomas Bayes and is a method used in probability theory.	As an official theorem, Bayes' theorem is valid in all universal interpretations of probability.
+If a term appears in the document then its value in the vector is non-zero.	A document is represented as a vector and each dimension corresponds to a separate term.
+• P(A|B) is the conditional probability of A, given B.	• P(B|A) is the conditional probability of B given A.
+The differing application has a direct influence on what the definition of the term means.	The way that a 'term' is defined depends on the application.
+Thus, the "program" is the optimal plan of action that is being produced.	Thus, the "program" is the optimal plan for action that is produced.
+Thus, the "program" is the optimal plan for action that is produced.	Therefore, the "program" is the optimal plan for action that is produced.
+One of the best known schemes is tf-idf weighting (see the example below).	One of the best known methods is called tf-idf weighting.
+It is "previous" in the sense that it does not take into account any information about B.	It does not take into account any information about B and therefore is considered “prior”.
+The algebraic model for representing text documents and objects as vectors of identifiers is called the vector space model.	A possible use for a vector space model is for retrieval and filtering of information.
+Secondly to define the value of the optimal solution recursively.	Generalise the structure of an optimal solution 2.
+There are two main approaches for dynamic programming.	There are four steps in Dynamic Programming: 1.
+P(A), or the probability that the student is a girl regardless of any other information.	It is mainly used to calculate the probability of one event’s outcome given that a previous event happened.
+For instance, a events schedule at an exhibition is sometimes called a program.	For instance, a finalized schedule of events at an exhibition is sometimes called a program.
+This can be useful when the number of times a word appears is not considered important.	One of the most important uses of page rank is its meaning to advertising.
+Define value of optimal solution recursively.	Characterise structure of an optimal solution.
+It was first used in the SMART Information Retrieval System.	It is used in information retrieval and was first used in the SMART Information Retrieval System.
+In vector space model, the documents from which the information is to be retrieved are represented as vectors.	The vector space model has several disadvantages.
+A term which occurs in the document has a value in the vector of non-zero.	The order in which the terms appear in the document is lost in the vector space representation.
+Vector space representation results in the loss of the order which the terms are in the document.	In the vector space model a document is represented as a vector.
+The easiest way to look at inheritance is as an “…is a kind of” relationship.	An example of this gain in efficiency is a path-finding problem.
+If a term exists in a document, its value in the vector is not equal to zero.	A document is represented as a vector, with each dimension corresponding to a separate term.
+Vector space representation results in the loss of the order which the terms are in the document.	Since the PageRank is the most important algorithms which is used in the Google engine.
+A document is represented as a vector, with each dimension corresponding to a separate term.	The basic idea is to represent each document as a vector of certain weighted word frequencies.
+Thus, the "program" is the optimal plan for action that is produced.	After this, it is using this to pick the best overall path.
+A document is represented as a vector.	The vector space model are the documents which are represented as “bags of words”.
+The value of a vector is non-zero if a term occurs in the document.	A term which occurs in the document has a value in the vector of non-zero.
+A page that is linked to by many pages with high PageRank receives a high rank itself.	A link to a page is seen as a vote of support.
+Several different ways of computing these values, also known as (term) weights, have been developed.	Other ways of computing these values, or weights, have been developed.
+A document is represented as a vector, with each dimension corresponding to a separate term.	The value of a vector is non-zero if a term occurs in the document.
+P(B) (a.k.a. the normalizing constant) is the prior or marginal probability of B.	P(B) is the prior or marginal probability of B, and acts as a normalizing constant.
+The PageRank is computed iteratively, and it is found that the PageRank values converge fairly rapidly.	The PageRank depends on the PageRank rating and number of all pages that have links to it.
+In general, we can solve a problem with optimal substructure using a three-step process: 1.	In a word, we can solve a problem with optimal substructure using a three-step process.
+In the vector space model a document is represented as a vector.	A possible use for a vector space model is for retrieval and filtering of information.
+One of its uses is calculating posterior probabilities given observations.	It is usually used to calculate posterior probabilities given observations.
+If a term appears in the document, the terms value in the vector is non-zero.	Each item in the vector represents a different keyword.
+Finally, the order in which the terms appear in the document is lost in the vector space representation.	A term which occurs in the document has a value in the vector of non-zero.
+Several different ways of computing these values, also known as (term) weights, have been developed.	Many different ways of calculating these values, also known as (term) weights, have been developed.
+To derive the theorem, we begin with the definition of conditional probability.	In probability theory, the prior and conditional probabilities of two random events are related by Bayes' theorem.
+The way that a 'term' is defined depends on the application.	The definition of term is dependent on the application.
+Its first application was in the SMART Information Retrieval System.	It was used in the first time in the SMART Information Retrieval System.
+It doesn't take into account any information about B, so it is "prior".	However an object cannot be cast to a class which is no relative of it.
+Following this, each web page is given a ranking of 0-10 according to its relevance to a search.	A variation of the PageRank method bases the importance of a webpage on how many visits the page gets.
+Thus, the program is the best plan for action that is produced.	Thus, the "program" is the optimal plan of action that is being produced.
+This means that inheritance is used when types have common factors and these would be put into the superclass.	They do not have to be written in a computer language.
+These subproblems are not, however, independent.	It is similar to divide and conquer, however is differentiated as its subproblems are not independent.
+The key to Dynamic Programming is to find the structure of optimal solutions.	In general, dynamic programming is used on optimisation problems, where the most efficient solution is needed.
+When a document is represented as a vector, each dimension corresponds to a separate term.	Each dimensions corresponds to a separate terms.
+Bayes Theorem is a mathematical formula used to calculate conditional probabilities.	Bayes' theorem relates the conditional and marginal probabilities of two random events.
+Lucky Joe likes to predict the colour of the ball he selects and he is 80% accurate.	Joe records all of his results and about 0.5% of the time he accidently records the wrong results.
+Thus, the program is the best plan for action that is produced.	The other method is the top down approach which is a method that combines memorization and recursion.
+It is usually used to calculate posterior probabilities given observations.	It is usually be used to compute posterior probabilities given observations.
+The methodology takes much less time rather than naive methods.	The method takes much less time than naive methods.
+The methodology takes much less time rather than naive methods.	This is a much quicker method than other more naive methods.
+The definition of term is dependent on the application.	The definition of term depends on the application.
+This means that inheritance is used when types have common factors and these would be put into the superclass.	It is similar to divide and conquer, however is differentiated as its subproblems are not independent.
+Characterise structure of an optimal solution.	Use these optimal solutions to construct an optimal solution for the original problem.
+The theorem is often used when we have observations and wish to compute posterior probabilities.	It is usually used to calculate posterior probabilities given observations.
+Occasionally it is advantageous to differentiate between these uses, as it is not necessarily noticeable from context.	It also provides a way to generalize du to the "is a" relationship between classes.
+Construct an optimal solution from computed values.	Define value of optimal solution recursively.
+Occasionally it is advantageous to differentiate between these uses, as it is not necessarily noticeable from context.	It is similar to divide and conquer, however is differentiated as its subproblems are not independent.
+When a document is represented as a vector, each dimension corresponds to a separate term.	The basic idea is to represent each document as a vector of certain weighted word frequencies.
+When a document is represented as a vector, each dimension corresponds to a separate term.	Each dimension corresponds to a separate term.
+Mathematicians use the word to describe a set of rules which anyone can follow to solve a problem.	However an object cannot be cast to a class which is no relative of it.
+Whilst Bayesians describe probabilities in terms of beliefs and degrees of uncertainty.	At the same time, Bayesians describe probabilities in terms of beliefs and degrees of uncertainty.
+It is used in information filtering, information retrieval, indexing and relevancy rankings.	It is used in information filtering, indexing, relevancy rankings and information retrieval.
+In probability theory, Bayes' theorem relates the conditional and marginal probabilities of two random events.	Bayes' theorem is useful in evaluating the result of drug tests.
+Outbound, links from your page to others.	Dangling, links to a page which has no links to others.
+Vector space representation results in the loss of the order which the terms are in the document.	In vector space model, the documents from which the information is to be retrieved are represented as vectors.
+In computer science; dynamic programming is a way of solving problems consist of overlapping subproblems and optimal substructure.	However, the key in Dynamic Programming is to determine the structure of optimal solutions.
+If a term appears in the document, the terms value in the vector is non-zero.	Vector space representation results in the loss of the order which the terms are in the document.
+In vector space model, the documents from which the information is to be retrieved are represented as vectors.	Finally, the order in which the terms appear in the document is lost in the vector space representation.
+For instance, a finalized schedule of events at an exhibition is sometimes called a program.	The typical example could be of a finalized schedule of events at an exhibition.
+Several different ways of computing these values, also known as (term) weights, have been developed.	Several different ways of computing these values, additionally known as (term) weights, have been developed.
+If a term exists in a document, its value in the vector is not equal to zero.	If a term appears in the document then its value in the vector is non-zero.
+A hyperlink to a page counts as a vote of support.	A link to a page is seen as a vote of support.
+This means that inheritance is used when types have common factors and these would be put into the superclass.	The main problem is divided into sub problems which are solved and stored for future use.
+Most of these languages provide an “extend” keyword, which is used to subclass another.	For example, a program could exist to model different forms of transport.
+For instance, a finalized schedule of events at an exhibition is sometimes called a program.	For example, a schedule of events at an exhibition is sometimes called a programme.
+The value of a vector is non-zero if a term occurs in the document.	Each document is a vector where each word is a dimension.
+The theorem is often used when we have observations and wish to compute posterior probabilities.	It is often used to calculate posterior probabilities given observations.
+Other possible uses for vector space models are indexing and also to rank the relevancy of differing documents.	In this classic model the term specific weights in the document vectors are products of local and global parameters.
+The correct answer can be computed using Bayes' theorem.	Bayes' theorem is useful in evaluating the result of drug tests.
+• P(B|A) is the conditional probability of B given A.	P(A|B) is the conditional probability of A, given B.
+Since the PageRank is the most important algorithms which is used in the Google engine.	The PageRank is a recursive algorithm used by Google to determine which webpages are more important than others.
+Nevertheless, the patent is assigned to the University of Stanford and not to Google.	However, the patent is assigned to Stanford University and not to Google.
+This means that inheritance is used when types have common factors and these would be put into the superclass.	It is therefore used to create relationships between one object and another.
+In the vector space model a document is represented as a vector.	A document is represented as a vector, and each dimension corresponds to a separate term.
+P(B) is the prior or marginal probability of B, and acts to normalise the probability.	P(B) (a.k.a. the normalizing constant) is the prior or marginal probability of B.
+This can be useful when the number of times a word appears is not considered important.	The easiest way to look at inheritance is as an “…is a kind of” relationship.
+In probability theory, Bayes' theorem relates the conditional and marginal probabilities of two random events.	Bayes' theorem relates the conditional and marginal probabilities of two random events.
+The definition of term depends on the application.	The definition of a term depends on the application.
+Break up the problem different smaller subproblems.	A problem with overlapping subproblems means that the same subproblems may be used to solve many different larger problems.
+Inheritance is a method of forming new classes using predefined classes.	Inheritance in object oriented programming is a way to form new classes using classes that have already been defined.
+So the same rule applies with keywords and indeed longer phrases.	Single words, keywords and occasionally longer phrases are used for terms.
+There is also Conditional Probability which is usually interested in the way variables relate to each other.	The PageRank is a recursive algorithm used by Google to determine which webpages are more important than others.
+Thus, the program is the best plan for action that is produced.	Thus, the "program" is the optimal plan for action that is produced.
+Inheritance is a basic concept in object oriented programming.	Inheritance in object oriented programming is a way to form new classes using classes that have already been defined.
+Programming, in this sense, means finding an acceptable plan of action.	Programming, in this sense, means finding an acceptable plan, an algorithm.
+The vector space model has some limitations: 1.	The vector space model has several disadvantages.
+Using the vector space model for Information Retrieval models all pages and queries as high-dimensional sparse vectors.	A possible use for a vector space model is for retrieval and filtering of information.
+One of the most famous schemes is tf-idf weighting.	One of the best known schemes is tf-idf (term frequency-inverse document frequency) weighting.
+A document is represented as a vector, with each dimension corresponding to a separate term.	A document has representation as a vector.
+Vector space representation results in the loss of the order which the terms are in the document.	The order in which terms appear in the document is lost in a vector space representation.
+P(A) is the probability of the student being a girl (which is 2/5).	What is the probability this student is a girl?
+The basic idea is to represent each document as a vector of certain weighted word frequencies.	If a term appears in the document, the terms value in the vector is non-zero.
+Therefore, the "program" is the optimal plan for action that is produced.	The "program" is the optimal plan for action that is produced.
+This is highly used in dynamic programming.	There are four steps in Dynamic Programming: 1.
+Other ways of computing these values, or weights, have been developed.	Many different methods of calculating these values, sometimes known as (term) weights, have been developed.
+It is usually be used to compute posterior probabilities given observations.	It is used to compute posterior probabilities given observations.
+In probability theory, Bayes' theorem relates the conditional and marginal probabilities of two random events.	Bayes Theorem is a mathematical formula used to calculate conditional probabilities.
+P(B) is the prior or marginal probability of B, and acts as a normalizing constant.	P(B|A) is the conditional probability of B given A.
+A website’s page rank, is how ‘important’ it is on the web.	A variation of the PageRank method bases the importance of a webpage on how many visits the page gets.
+In computer science; dynamic programming is a way of solving problems consist of overlapping subproblems and optimal substructure.	Dynamic Programming is a very powerful mathematical technique, often utilised in programming, for solving optimization problems.
+The most popular is tf-idf weighting.	One of the most famous schemes is tf-idf weighting.
+This method is used in the Google Toolbar, which reports back actual site visits to Google.	In order to prevent spamming, Google releases little information on the way in which a PageRank is calculated.
+To achieve this, the programmer has to note generalisations and similarities about various aspects of the program.	Mathematicians use the word to describe a set of rules which anyone can follow to solve a problem.
+Construct an optimal solution from computed values.	The last point would be to construct an optimal solution from the computed values.
+If the term doesn’t occur within the document, the value in the vector is zero.	If a term appears in the document, the terms value in the vector is non-zero.
+This is a much quicker method than other more naive methods.	The method takes much less time than naive methods.
+P(B) is the prior or marginal probability of B, and acts to normalise the probability.	P(A), or the probability that the student is a girl regardless of any other information.
+Inheritance in object oriented programming is a way to form new classes using classes that have already been defined.	inheritance in object oriented programming is where a new class is formed using classes which have allready been defined.
+They also inherit the attributes and methods of its superclass.	The new classes are called derived classes and they inherit the behaviours and attributes of the base classes.
+A term which occurs in the document has a value in the vector of non-zero.	A document is represented as a vector, with each dimension corresponding to a separate term.
+If a term appears in the document, the terms value in the vector is non-zero.	A term which occurs in the document has a value in the vector of non-zero.
+The order in which terms appear in the document is lost in a vector space representation.	In vector space model, the documents from which the information is to be retrieved are represented as vectors.
+The vector space model has some limitations: 1.	LIMITATION: There is some limitation of vector space model.
+However, the vector space model has limitations.	The limitations of the vector space model are thus.
+The method can be abused when people deliberately link to sites in order to raise a site's PageRank.	Mathematicians use the word to describe a set of rules which anyone can follow to solve a problem.
+When a document is represented as a vector, each dimension corresponds to a separate term.	To explain further vector space models, basically a document is characterized by a vector.
+The basic idea is to represent each document as a vector of certain weighted word frequencies.	A term which occurs in the document has a value in the vector of non-zero.
+Programming, in this sense, means finding an acceptable plan of action.	Programming means finding a plan of action.
+Google’s payoff is that it gets to track the behaviour of actual users.	After this, it is using this to pick the best overall path.
+This means that inheritance is used when types have common factors and these would be put into the superclass.	There is also Conditional Probability which is usually interested in the way variables relate to each other.
+Bayes’ theorem was names after Rev Thomas Bayes and is a method used in probability theory.	As a formal theorem Bayes theorem is valid in all common interpretations of probability.
+Dynamic Programming solves problems by combining the solutions of subproblems.	The key to Dynamic Programming is to find the structure of optimal solutions.
+Terms are basically the words or any indexing unit used to identify the contents of a text.	In this classic model the term specific weights in the document vectors are products of local and global parameters.
+The vector space model are the documents which are represented as “bags of words”.	In vector space model, the documents from which the information is to be retrieved are represented as vectors.
+Thus, the "program" is the optimal plan of action that is being produced.	The easiest way to look at inheritance is as an “…is a kind of” relationship.
+To achieve this, the programmer has to note generalisations and similarities about various aspects of the program.	The advantage being the less time consumption in comparison to other amateur methods.
+Subclasses are said to extend or specialise their superclasses.	Subclasses are said to ‘extend’ superclasses.
+It is also called the posterior probability because it is derived from or depends upon the specified value of B.	It is also called the subsequent probability because it is derived from or depends upon the specified value of B.
+This can be useful when the number of times a word appears is not considered important.	It is mainly used to calculate the probability of one event’s outcome given that a previous event happened.
+Java allows object inheritance.	Inheritance is one of the basic concepts of Object Oriented Programming.
+Mathematicians use the word to describe a set of rules which anyone can follow to solve a problem.	Instead, a new object is made to inherit properties of objects which already exist.
+Virtual attributes and methods can be shadowed/overridden.	In Java all attributes and methods are implicitly virtual.
+One of the best known schemes is tf-idf weighting, proposed by Salton, Wong and Yang.	tf-idf weighting is one of the most well known schemes.
+In the vector space model a document is represented as a vector.	The vector space model are the documents which are represented as “bags of words”.
+The vector space model has the following limitations: 1.	LIMITATION: There is some limitation of vector space model.
+It is intended to help reuse existing code with little or no modification.	The idea of inheritance is to reuse the existing code with little or no modification at all.
+It is often used to compute posterior probabilities given observations.	The theorem is often used when we have observations and wish to compute posterior probabilities.
+When any sub-problem is met again, it can be found and re-used to solve another problem.	It was intended to allow existing code to be used again with minimal or no alteration.
+The peropos of inheritance in object oriented programming is to minimize the reuse of existing code without modification.	In object oriented programming inheritance is also dependant on access level modifiers.
+Every dimension is precisely related to a separate term.	Each and every dimension corresponds to a separate term.
+The other method is the top down approach which is a method that combines memorization and recursion.	The easiest way to look at inheritance is as an “…is a kind of” relationship.
+P(A), or the probability that the student is a girl regardless of any other information.	Later versions of PageRank (see the below formulas) would assume a probability distribution between 0 and 1.
+When a document is represented as a vector, each dimension corresponds to a separate term.	The value of a vector is non-zero if a term occurs in the document.
+To achieve this, the programmer has to note generalisations and similarities about various aspects of the program.	Terms are basically the words or any indexing unit used to identify the contents of a text.
+The vector space model are the documents which are represented as “bags of words”.	The limitations of the vector space model are thus.
+The vector space model is one of these methods, and it is an algebraic model.	In vector space model, the documents from which the information is to be retrieved are represented as vectors.
+The vector space model has the following limitations: 1.	The vector space model has some limitations: 1.
+However an object cannot be cast to a class which is no relative of it.	Here by meaning that a program can be an optimal plan for the produced action.
+The vector is then constucted of the frequency of eacher word (dimension).	The basic idea is to represent each document as a vector of certain weighted word frequencies.
+Typically terms are single words, keywords, or longer phrases.	Typically terms are keywords, single words or longer phrases.
+It does not take into account any information about B and therefore is considered “prior”.	It doesn't take into account any information about B, so it is "prior".
+The PageRank depends on the PageRank rating and number of all pages that have links to it.	of a particular page is roughly based upon the quantity of inbound links as well as the PageRank?
+Construct an optimal solution from computed values.	Use these optimal solutions to construct an optimal solution for the original problem.
+Single words, keywords and occasionally longer phrases are used for terms.	The number of unique words in the vocabulary denotes the dimensionality, if words are used for the terms.
+The vector space model has several disadvantages.	A document has representation as a vector.
+Every dimension is precisely related to a separate term.	A document is represented as a vector, with each dimension corresponding to a separate term.
+This means that inheritance is used when types have common factors and these would be put into the superclass.	Occasionally it is advantageous to differentiate between these uses, as it is not necessarily noticeable from context.
+This is highly used in dynamic programming.	The key to Dynamic Programming is to find the structure of optimal solutions.
+The idea of inheritance is to reuse the existing code with little or no modification at all.	The idea of inheritance in OOP refers to the formation of new classes with the already existing classes.
+The peropos of inheritance in object oriented programming is to minimize the reuse of existing code without modification.	However, the key in Dynamic Programming is to determine the structure of optimal solutions.
+A document is represented as a vector and each dimension corresponds to a separate term.	When a document is represented as a vector, each dimension corresponds to a separate term.
+It is valid in all common interpretations of probability.	As an official theorem, Bayes' theorem is valid in all universal interpretations of probability.
+The order in which the terms appear in the document is lost in the vector space representation.	If the term doesn’t occur within the document, the value in the vector is zero.
+Since it is a formal theorem, Bayes' theorem holds in all popular interpretations of probability.	As a formal theorem, Bayes' theorem is valid in all common interpretations of probability.
+The methodology takes much less time rather than naive methods.	The method is more effiecent than naive methods.
+The most popular is tf-idf weighting.	One of the best known schemes is tf-idf (term frequency-inverse document frequency) weighting.
+This means that inheritance is used when types have common factors and these would be put into the superclass.	This can be useful when the number of times a word appears is not considered important.
+The value of a vector is non-zero if a term occurs in the document.	If the term doesn’t occur within the document, the value in the vector is zero.
+The value of a vector is non-zero if a term occurs in the document.	The order in which the terms appear in the document is lost in the vector space representation.
+The way that a 'term' is defined depends on the application.	The easiest way to look at inheritance is as an “…is a kind of” relationship.
+The similarity measures largely identify the retrieval efficiency of a particular information retrieval system.	It is used in information retrieval and was first used in the SMART Information Retrieval System.
+Typically terms are keywords, single words or longer phrases.	Single words, keywords and occasionally longer phrases are used for terms.
+The vector space model is one of these methods, and it is an algebraic model.	The vector space model has the following limitations: 1.
+Therefore, the "program" is the optimal plan for action that is produced.	Since the PageRank is the most important algorithms which is used in the Google engine.
+• P(A|B) is the conditional probability of A, given B.	P(B) (a.k.a. the normalizing constant) is the prior or marginal probability of B.
+Construct an optimal solution from computed values.	Generate the optimal solution of these computed values
+The theorem is often used when we have observations and wish to compute posterior probabilities.	It is usually be used to compute posterior probabilities given observations.
+Generalise the structure of an optimal solution 2.	Use these optimal solutions to construct an optimal solution for the original problem.
+The vector space model is one of these methods, and it is an algebraic model.	The vector space model has several disadvantages.
+If the term doesn’t occur within the document, the value in the vector is zero.	Finally, the order in which the terms appear in the document is lost in the vector space representation.
+When a document is represented as a vector, each dimension corresponds to a separate term.	In the vector space model a document is represented as a vector.
+Overlapping subproblems means that the same subproblems are used to solve many different larger problems.	A problem with overlapping subproblems means that the same subproblems may be used to solve many different larger problems.
+The differing application has a direct influence on what the definition of the term means.	Terms are basically the words or any indexing unit used to identify the contents of a text.
+The differing application has a direct influence on what the definition of the term means.	The definition of term is dependent on the application.
+Inheritance is an important feature in object orientated programming.	The peropos of inheritance in object oriented programming is to minimize the reuse of existing code without modification.
+In probability theory, the prior and conditional probabilities of two random events are related by Bayes' theorem.	Bayes' Theorem is a theorem of probability theory originally stated by the Reverend Thomas Bayes.
+Without a proof of correctness, such an algorithm is likely to fail.	However an object cannot be cast to a class which is no relative of it.
+So in essence it is a popularity contest between WebPages.	It is essentially a popularity meter.
+Several different ways of computing these values, additionally known as (term) weights, have been developed.	Several different ways have been developed of calculating these values (also known as term weights).
+The other method is the top down approach which is a method that combines memorization and recursion.	Since the PageRank is the most important algorithms which is used in the Google engine.
+The order in which terms appear in the document is lost in a vector space representation.	If a term occurs in the document, the value will be non-zero in the vector.
+The method takes much less time than naive methods.	And thus the method takes much less time than more naive methods.
+Inheritance is one of the basic concepts of Object Oriented Programming.	In object oriented programming inheritance is also dependant on access level modifiers.
+As a formal theorem, Bayes' theorem is valid in all common interpretations of probability.	Bayes theorem can be used to compute the probability that a proposed diagnosis is correct.
+Thus, the program is the best plan for action that is produced.	After this, it is using this to pick the best overall path.
+The basic idea is to represent each document as a vector of certain weighted word frequencies.	In the vector space model a document is represented as a vector.
+Object oriented programming is a style of programming that supports encapsulation, inheritance, and polymorphism.	Inheritance is a basic concept in object oriented programming.
+The vector space model has some limitations: 1.	The limitations of the vector space model are thus.
+It is mainly used to calculate the probability of one event’s outcome given that a previous event happened.	It is also called the posterior probability because it is derived from or depends upon the specified value of B.
+The theorem is often used when we have observations and wish to compute posterior probabilities.	Bayes theorem can be used to compute the probability that a proposed diagnosis is correct.
+This can be useful when the number of times a word appears is not considered important.	It has no relationship to computer programming; instead it is a process of finding a satisfactory algorithm.
+In probability theory, Bayes' theorem relates the conditional and marginal probabilities of two random events.	In probability theory, the prior and conditional probabilities of two random events are related by Bayes' theorem.
+One of the best known schemes is tf-idf weighting (see the example below).	One of the best known schemes is tf-idf weighting, proposed by Salton, Wong and Yang.
+It is therefore used to create relationships between one object and another.	It also provides a way to generalize du to the "is a" relationship between classes.
+Then, using this, the best overall path can be found, thereby demonstrating the dynamic programming principle.	The further down an inheritance tree you get, the more specific the classes become.
+When a document is represented as a vector, each dimension corresponds to a separate term.	A document has representation as a vector.
+To achieve this, the programmer has to note generalisations and similarities about various aspects of the program.	It is similar to divide and conquer, however is differentiated as its subproblems are not independent.
+The further down an inheritance tree you get, the more specific the classes become.	The differing application has a direct influence on what the definition of the term means.
+The algebraic model for representing text documents and objects as vectors of identifiers is called the vector space model.	The limitations of the vector space model are thus.
+In general, dynamic programming is used on optimisation problems, where the most efficient solution is needed.	However, the key in Dynamic Programming is to determine the structure of optimal solutions.
+It is used in information filtering, information retrieval, indexing and relevancy rankings.	A possible use for a vector space model is for retrieval and filtering of information.
+The easiest way to look at inheritance is as an “…is a kind of” relationship.	It also provides a way to generalize du to the "is a" relationship between classes.
+This means that inheritance is used when types have common factors and these would be put into the superclass.	It is "prior" in the sense that it does not take into account any information about B.
+This means that inheritance is used when types have common factors and these would be put into the superclass.	The method can be abused when people deliberately link to sites in order to raise a site's PageRank.

@@ -1,0 +1,76 @@
+Model: Our system employs a ridge regression model (linear regression with L2 error and L2 regularization) to combine a set of similarity measures.
+Feature: Word embbedings averaging as a baseline
+		Word Alignment (the similarity in the paper)
+		skip-thoughts vetors cosine similarity
+
+The model is trained on SemEval 2012–2015 data.
+
+Data preprcessing : for feature 1 and 3 -lower case
+										-remove special chars
+										-replace \ with spaces
+					for feature 2 		-lower case
+										-remove special chars
+										-replace \ with spaces
+										-remove stop words
+
+
+Feature 1 was baseline :
+Paragram embeddings were used ,  first we search for the word in Paragram-Phrase XXL if word was not found we searched in  Paragram-SL999
+We averaged the words vectors to get senctence2vector representation
+We used cosine similarity to get similarty between words.
+Anaylsis:
+#to be done by Dantong and Jiani
+Results:
+
+answer-answer   0.665291102364
+question-question   0.656371231796
+postediting   0.839890014398
+plagiarism   0.833936287596
+headlines   0.741949762189
+average: 0.747487679669
+Feature 2 Word Alignment:
+We used apply the monolingual word aligner developed by Sultan et al. (2014a) to input sentence pairs. Similarity between senetce was calcuted by (copy the equation in the paper)
+
+Feature 3 Skip-thoughts:
+We used the concatenation of uni-skip and bi-skip, resulting in a 4800 dimensional vector represenation for each sentence. (we used pretrained )
+Cosine similarty was used to calucalte the similarty between this pair of vectors
+
+Results:
+
+Comibing feature 1 and 2:
+answer-answer   0.645691933479
+question-question   0.62736131069
+postediting   0.835473531411
+plagiarism   0.835273385262
+headlines   0.768938131382
+Average: 0.7425476584448
+
+Combinig feature 1 and 2 and 3:
+
+answer-answer   0.645911980027
+question-question   0.625908092321
+postediting   0.836426014612
+plagiarism   0.835382164036
+headlines   0.76855060249
+0.742435770697
+
+
+Combinig feature 1 and 3:
+answer-answer   0.664969083254
+question-question   0.651389108129
+postediting   0.842652045245
+plagiarism   0.834619682447
+headlines   0.741809880516
+0.747087959918
+
+
+
+An error analysis of your best performing results
+//to be done by someone
+What else you could have tried if you had more time 
+//to be done by someone
+
+
+Dont forget to add refences skipgram paper the word embbedding paper and the paper jani sent me
+
+
