@@ -15,6 +15,9 @@ from nltk.corpus import wordnet
 from sklearn.svm import SVC
 import re
 
+import enchant
+from enchant.checker import SpellChecker
+from nltk.metrics.distance import edit_distance
 
 
 contractions_dict = { 
@@ -143,6 +146,21 @@ def expand_contractions(s, contractions_re ,contractions_dict=contractions_dict)
        return contractions_dict[match.group(0)]
     return contractions_re.sub(replace, s)
 
+class MySpellChecker():
+
+    def __init__(self, dict_name='en_US', max_dist=2):
+        self.spell_dict = enchant.Dict(dict_name)
+        self.max_dist = max_dist
+
+    def replace(self, word):
+        suggestions = self.spell_dict.suggest(word)
+
+        if suggestions:
+            for suggestion in suggestions:
+                if edit_distance(word, suggestion) <= self.max_dist:
+                    return suggestions[0]
+
+        return word
 
 def complexPreprocessing(Sentences,Stopwords =None):
 
@@ -159,6 +177,52 @@ def complexPreprocessing(Sentences,Stopwords =None):
 	Sentences.lower()
 	#print Sentences
 	return Sentences
+
+
+
+def get_word_from_wordnet(word):  
+    try:
+        wordFromList = wordnet.synsets(word)
+        if wordFromList:
+            s =wordFromList[0]
+            s = s.name().split(".")[0].replace('_',' ')
+        else:
+            s=None
+    except UnicodeDecodeError:
+        s = None
+    # print s
+    return s
+
+def get_senses(Fisrtsentence):
+	#Fisrtsentence = get_processed_sentence(Fisrtsentence)
+	Fisrtsentence = Fisrtsentence.split(' ')
+	#print Fisrtsentence
+	FirstBOS = []
+	for word in Fisrtsentence:
+	#	print word
+		output = get_word_from_wordnet(word)
+		if(output is not None):
+	#		print output
+			FirstBOS.append(output)
+		else:
+			 FirstBOS.append(word)
+
+	return string.join(FirstBOS, " ")
+
+
+def get_bag_of_senes_similarity(FirstSentence,SecondSentence):
+	FistBOS = bag_of_senses(FirstSentence)
+	SecondBOS= bag_of_senses(SecondSentence)
+	# print  FistBOS , SecondBOS
+	if(FistBOS !=[] and SecondBOS!=[]):
+		
+		common = len(list(set(FistBOS).intersection(SecondBOS)))
+
+		similarity = 2.0*common /(len(FistBOS)+len(SecondBOS))
+		# print common ,  (len(FistBOS)+len(SecondBOS)) ,similarity
+	else:
+		similarity = 0
+	return normalized(0,1,0,5,similarity)
 
 
 def read_data(input):
