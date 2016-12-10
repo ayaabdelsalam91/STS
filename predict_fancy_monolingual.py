@@ -316,11 +316,11 @@ def predict(model,input):
 	#input = input.reshape(-1, 1)
 	return model.predict(input)
 
-# def mergeFeatures(f1,f2,f3):
-# 	return np.column_stack((f1,f2,f3))
+def mergeFeatures(f1,f2,f3):
+	return np.column_stack((f1,f2,f3))
 
-def mergeFeatures(f1,f2):
-	return np.column_stack((f1,f2))
+# def mergeFeatures(f1,f2):
+# 	return np.column_stack((f1,f2))
 def eval(gold,predectvalues):
             pr = pearsonr(gold, predectvalues)[0]
             #print 'Test Pearson: ' + str(pr)
@@ -351,11 +351,11 @@ if __name__ == "__main__":
 	embeddings = read_embeddings(Data+"train_embeddings.txt")
 	s1,s2 = read_data(Data+"train.input.txt")
 	gs =  read_gs(Data+"train.gs.txt")
-	#f1_train = get_Feature1(s1[:700],s2[:700],Main_dictionary,Main_embeddings,dictionary,embeddings)
+	f1_train = get_Feature1(s1[:700],s2[:700],Main_dictionary,Main_embeddings,dictionary,embeddings)
 	f2_train = get_Feature2(s1[:700],s2[:700],Stopwords)
 	skModel = skipthoughts.load_model()
 	f3_train = get_Feature3(s1[:700],s2[:700],skModel)
-	train_features = mergeFeatures(f2_train,f3_train)
+	train_features = mergeFeatures(f1_train,f2_train,f3_train)
 	
 
 	model = prepareModel(train_features,gs[:700])
@@ -364,13 +364,13 @@ if __name__ == "__main__":
 
 	joblib.dump(model, filename)
  
-	# print('Coefficients: \n', model.coef_)
-	# print model.intercept_
+	print('Coefficients: \n', model.coef_)
+	print model.intercept_
 
-	# toc = time.time()
-	# print('Processing time: %r'
- #       % (toc - ticstart))
-	# os.system('say "Done training"')
+	toc = time.time()
+	print('Processing time: %r'
+       % (toc - ticstart))
+	os.system('say "Done training"')
 
 
 	Datasets = ['answer-answer' , 'question-question','postediting','plagiarism','headlines']
@@ -389,10 +389,10 @@ if __name__ == "__main__":
 		embeddings = read_embeddings(Data+dataset+ "_embbedings.txt")
 		s1,s2 = read_data(Data +"STS2016.input."+dataset+".txt")
 		gs =  read_gs(Data +"STS2016.gs."+dataset+".txt")
-		#f1_test = get_Feature1(s1,s2,Main_dictionary,Main_embeddings,dictionary,embeddings)
+		f1_test = get_Feature1(s1,s2,Main_dictionary,Main_embeddings,dictionary,embeddings)
 		f2_test = get_Feature2(s1,s2,Stopwords)
 		f3_test = get_Feature3(s1,s2,skModel)
-		test_features = mergeFeatures(f2_test,f3_test)
+		test_features = mergeFeatures(f1_test,f2_test,f3_test)
 		yhat= predict(model,test_features)
 		pr = eval(gs,yhat)
 		prtotal+= pr
