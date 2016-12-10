@@ -7,10 +7,10 @@ from scipy.stats import pearsonr
 from sklearn.linear_model import RidgeCV
 from sklearn.externals import joblib
 import numpy as np
-from aligner import *
+# from aligner import *
 import pandas
 import time
-import skipthoughts
+# import skipthoughts
 from nltk.corpus import wordnet
 from sklearn.svm import SVC
 import re
@@ -585,7 +585,7 @@ if __name__ == "__main__":
 		# # f4_test =  get_Feature4(s1,s2)
 		# test_features = mergeFeatures(f1_test,f2_test)
 		# yhat= predict(model,test_features)
-		pr = eval(gs,yhat)
+		pr = eval(gs,f1_test)
 		prtotal+= pr
 		
 		eval_DS.append(pr)
