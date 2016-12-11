@@ -2,6 +2,7 @@ import sys
 import os
 import math
 import string
+import re
 from scipy.stats import pearsonr
 from unicodedata import category
 
@@ -67,6 +68,9 @@ def get_sentence_similarity(FirstSentence,SecondSentence,Main_dictionary,Main_em
 	table = string.maketrans("","")
 	FirstSentence = FirstSentence.lower()
 	SecondSentence = SecondSentence.lower()
+	p = re.compile(r'([!"#$%&()*+,-./:;<=>?@\[\\\]^_`{|}~0-9])', re.IGNORECASE)
+	FirstSentence =re.sub(p,'',FirstSentence)
+	SecondSentence = re.sub(p,'',SecondSentence)
 	FirstSentence = FirstSentence.split(' ')
 	SecondSentence = SecondSentence.split(' ')
 	len1 = len(FirstSentence)+1
@@ -77,7 +81,7 @@ def get_sentence_similarity(FirstSentence,SecondSentence,Main_dictionary,Main_em
 	flag = False
 	for i in range(0, len1-1):
 		if(len(FirstSentence[i])>0):
-			FirstSentence[i] = FirstSentence[i].translate(table, string.punctuation)
+			#FirstSentence[i] = FirstSentence[i].translate(table, string.punctuation)
 
 			vector = get_word_from_embeddings(FirstSentence[i],Main_dictionary,Main_embeddings,dictionary,embeddings_dictionary)
 			if(vector != -1 and vector !=[]):
@@ -90,20 +94,20 @@ def get_sentence_similarity(FirstSentence,SecondSentence,Main_dictionary,Main_em
 	num=0
 	for i in range(0, len2-1):
 		if(len(SecondSentence[i])>0):
-			SecondSentence[i] = SecondSentence[i].translate(table, string.punctuation)
+			#SecondSentence[i] = SecondSentence[i].translate(table, string.punctuation)
 			vector = get_word_from_embeddings(SecondSentence[i],Main_dictionary,Main_embeddings,dictionary,embeddings_dictionary)
 			if(vector != -1 and vector !=[]):
 				num+=1
 				SecondSentence_vector = [SecondSentence_vector[j] + vector[j] for j in range(300)]
-	if(num > 1):
-		SecondSentence_vector = [SecondSentence_vector[j]/num for j in range(300)]
+	if(num > 2):
+		SecondSentence_vector = [SecondSentence_vector[j]/(num) for j in range(300)]
 	elif(num == 0 ):
 		flag = True
 	if(not flag):
 		similarity = _cosine_similarity(FirstSentence_vector,SecondSentence_vector)
 	else:
 		similarity =-1
-	return normalized(0.7,1,0,5,similarity)
+	return normalized(-1,1,0,5,similarity)
 
 def output_similarity(out_path,FirstSentences,SecondSentences,Main_dictionary,Main_embeddings,dictionary,embeddings):
 	out_file = open(out_path, "w")
@@ -227,21 +231,19 @@ if __name__ == "__main__":
 	#create_dictionary("./paragram-phrase-XXL.txt","phrase-XXL_dictionary.txt")
 	Main_dictionary = read_dictionary("./phrase-XXL_dictionary.txt")
 	Main_embeddings = read_embeddings("./paragram-phrase-XXL.txt")
-
-	
 	Data = './Data/'
 	Output_path = './Data/Basic_output/'
 	WordEmbbedings = "/Users/aya/Documents/CMSC723/P3/paragram_300_sl999/paragram_300_sl999.txt"
-
 	Datasets = ['answer-answer' , 'question-question','postediting','plagiarism','headlines']
 	eval_DS = []
-
+	#answer-answer , 'question-question','postediting','plagiarism','headlines',
+	#Datasets = ['headlines']
 	print "Testing...."
 	prtotal = 0 
 	for dataset in Datasets:
 		print "Testing "  + dataset
 		tic = time.time()
-		# BOW,unqiue_count = bag_of_words(Data +"STS2016.input."+dataset+".txt")
+		BOW,unqiue_count = bag_of_words(Data +"STS2016.input."+dataset+".txt")
 		# create_training_embeddings(BOW,WordEmbbedings,Data+dataset+ "_embbedings.txt")
 		# create_dictionary(Data+dataset+ "_embbedings.txt",Data+dataset+ "_dictionary.txt")
 		dictionary = read_dictionary(Data+dataset+"_dictionary.txt")
@@ -262,7 +264,8 @@ if __name__ == "__main__":
 	for i in range(len(Datasets)):
 		print  Datasets[i] , " " , eval_DS[i]
 
-
+	print('Processing time: %r'
+	       % (toc - ticstart))
 		
 
 	os.system('say "your program has finished"')

@@ -597,6 +597,4 @@ if __name__ == "__main__":
 	for i in range(len(Datasets)):
 		print  Datasets[i] , " " , eval_DS[i]
 
-
-
 	os.system('say "your program has finished"')
