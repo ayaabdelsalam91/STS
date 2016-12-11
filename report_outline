@@ -18,13 +18,13 @@ Preprocessing:
 Anaylsis:
 #to be done by Dantong and Jiani
 Results:
-answer-answer   0.665291102364
-question-question   0.656371231796
-postediting   0.839890014398
-plagiarism   0.833936287596
-headlines   0.741949762189
-average: 0.747487679669
 
+answer-answer   0.650946172146
+question-question   0.670415129392
+postediting   0.841269227473
+plagiarism   0.823757533664
+headlines   0.681947849525
+0.73366718244
 
 
 Fancy:

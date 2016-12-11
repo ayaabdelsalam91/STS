@@ -65,7 +65,6 @@ def get_word_from_embeddings(word,Main_dictionary,Main_embeddings,dictionary,emb
 def get_sentence_similarity(FirstSentence,SecondSentence,Main_dictionary,Main_embeddings,dictionary,embeddings_dictionary):
 	FirstSentenceor = FirstSentence
 	SecondSentenceor = SecondSentence
-	table = string.maketrans("","")
 	FirstSentence = FirstSentence.lower()
 	SecondSentence = SecondSentence.lower()
 	p = re.compile(r'([!"#$%&()*+,-./:;<=>?@\[\\\]^_`{|}~0-9])', re.IGNORECASE)
@@ -81,8 +80,6 @@ def get_sentence_similarity(FirstSentence,SecondSentence,Main_dictionary,Main_em
 	flag = False
 	for i in range(0, len1-1):
 		if(len(FirstSentence[i])>0):
-			#FirstSentence[i] = FirstSentence[i].translate(table, string.punctuation)
-
 			vector = get_word_from_embeddings(FirstSentence[i],Main_dictionary,Main_embeddings,dictionary,embeddings_dictionary)
 			if(vector != -1 and vector !=[]):
 				num+=1
@@ -94,7 +91,6 @@ def get_sentence_similarity(FirstSentence,SecondSentence,Main_dictionary,Main_em
 	num=0
 	for i in range(0, len2-1):
 		if(len(SecondSentence[i])>0):
-			#SecondSentence[i] = SecondSentence[i].translate(table, string.punctuation)
 			vector = get_word_from_embeddings(SecondSentence[i],Main_dictionary,Main_embeddings,dictionary,embeddings_dictionary)
 			if(vector != -1 and vector !=[]):
 				num+=1
