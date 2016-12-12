@@ -13,6 +13,7 @@ Preprocessing:
 -lower case
 -remove special chars
 -replace \ with spaces
+-remove number
 
 
 Anaylsis:
